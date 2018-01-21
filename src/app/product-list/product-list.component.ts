@@ -15,7 +15,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this._productService.getProducts().subscribe(response =>
-    this.products = response);
+    {
+      this.products = response;
+      console.log('Just set the response! First one: '+this.products[0].albumName)
+    });
   }
 
 }
